@@ -24,9 +24,8 @@ function httpGet(theUrl)
     index1 = time.indexOf(".")
     //time = time.substr(index+1, index1-index-1);
     time = time.substr(0, index1);
-    debugger
-    time = new Date(time);
     
+    time = new Date(time);
     return time;
 }
 var time = httpGet('http://worldtimeapi.org/api/timezone/Africa/Cairo')
@@ -34,6 +33,8 @@ var countDownDate = <?php
 echo strtotime("$date $h:$m:$s" ) ?> * 1000;
 
 var now = time * 1000;
+now /= 1000
+
 // Update the count down every 1 second
 var x = setInterval(function() {
 now = now + 1000;
