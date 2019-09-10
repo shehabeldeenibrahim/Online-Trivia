@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 10, 2019 at 12:43 AM
+-- Generation Time: Sep 10, 2019 at 05:54 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `timer` (
   `id` int(11) NOT NULL,
+  `question` varchar(100) NOT NULL,
   `date` date NOT NULL,
   `h` varchar(20) NOT NULL,
   `m` varchar(20) NOT NULL,
@@ -40,8 +41,10 @@ CREATE TABLE `timer` (
 -- Dumping data for table `timer`
 --
 
-INSERT INTO `timer` (`id`, `date`, `h`, `m`, `s`) VALUES
-(1, '2019-09-09', '10', '15', '0');
+INSERT INTO `timer` (`id`, `question`, `date`, `h`, `m`, `s`) VALUES
+(1, 'name?', '2019-09-10', '5', '50', '0'),
+(2, 'bday?', '2019-09-10', '5', '50', '11'),
+(3, 'status?', '2019-09-10', '5', '50', '21');
 
 --
 -- Indexes for dumped tables
