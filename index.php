@@ -3,7 +3,7 @@
 //including the database connection file
 include("config.php");
 
-$result = mysqli_query($mysqli, "SELECT * FROM timer ORDER BY id DESC");
+$result = mysqli_query($mysqli, "SELECT * FROM timer ORDER BY id ASC");
 while($res = mysqli_fetch_array($result)) { 
 $date = $res['date'];
 $h = $res['h'];
