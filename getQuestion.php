@@ -11,7 +11,7 @@ $dateO = 'o';
 $date = '';
 $question = getQuestion($json, $timeNowEpochs, $dateO, $date);
 
-echo json_encode(array("Question" => $question,"StartEpochs" => $dateO, "date" => $date));
+echo json_encode(array("Question" => $question,"EndEpochs" => $dateO, "date" => $date));
 
 
 
@@ -42,7 +42,7 @@ function getQuestion($json, $timeNow,&$dateO, &$date) {
     $startEpochs = mktime((int)$element["h"], (int)$element["m"], (int)$element["s"], (int)$month, (int)$day, (int)$year);
     //$startEpochs+=43200;
     $endEpochs = $startEpochs + 10;
-    $dateO = $startEpochs;
+    $dateO = $endEpochs;
     if($timeNow < $endEpochs && $timeNow >= $startEpochs){
       
       return $element["question"];
