@@ -60,21 +60,22 @@ function main()
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     // Output the result in an element with id="demo"
 
-    if(distance >20000 && distance <70000){
-        //Buffer from 70th sec to 20th sec in this case
+    if(distance >50000 && distance <70000){
+        //Buffer from 70th sec to 50th sec in this case
         document.getElementById("demo").innerHTML = "buffer";
     }
     else{
     document.getElementById("demo").innerHTML = days + "d " + hours + "h " +
-    minutes + "m " + seconds + "s " + question.Question;
+    minutes + "m " + seconds + "s " + question.Question + '<br>A:' + question.Answer1 
+    + '<br>B:' + question.Answer2 + '<br>C:' + question.Answer3 + '<br>D:' + question.Answer4;
     }
     
     // If the count down is over, write some text 
     if (distance < 0) {
         document.getElementById("demo").innerHTML = "Please wait for the next question";
-    clearInterval(x);
-    //  document.getElementById("demo").innerHTML = "EXPIRED";
-    main();
+        clearInterval(x);
+        //  document.getElementById("demo").innerHTML = "EXPIRED";
+        main();
     }
         
     }, 1000);

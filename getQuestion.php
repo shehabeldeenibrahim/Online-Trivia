@@ -6,12 +6,17 @@ $result = mysqli_query($mysqli, "SELECT * FROM timer ORDER BY id DESC");
 
 $json = getJsonDataDb($result);
 
+
+
 $timeNowEpochs = getTimeEpochsNow();
 $dateO = 'o';
 $date = '';
-$question = getQuestion($json, $timeNowEpochs, $dateO, $date);
+$Question_Answers = getQuestion($json, $timeNowEpochs, $dateO, $date);
 
-echo json_encode(array("Question" => $question,"EndEpochs" => $dateO, "date" => $date));
+echo json_encode(array("Answer1" => $Question_Answers['Answer1'],
+"Answer2" => $Question_Answers['Answer2'],"Answer3" => $Question_Answers['Answer3'],
+"Answer4" => $Question_Answers['Answer4'],"Question" => $Question_Answers['question'],
+"EndEpochs" => $dateO, "date" => $date));
 
 
 
@@ -45,7 +50,8 @@ function getQuestion($json, $timeNow,&$dateO, &$date) {
     $dateO = $endEpochs;
     if($timeNow < $endEpochs && $timeNow >= $startEpochs){
       
-      return $element["question"];
+      //return $element["question"];
+      return $element;
     }
     
   } 
