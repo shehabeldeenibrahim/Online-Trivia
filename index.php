@@ -66,8 +66,9 @@ function main()
     }
     else{
     document.getElementById("demo").innerHTML = days + "d " + hours + "h " +
-    minutes + "m " + seconds + "s " + question.Question + '<br>A:' + question.Answer1 
-    + '<br>B:' + question.Answer2 + '<br>C:' + question.Answer3 + '<br>D:' + question.Answer4;
+    minutes + "m " + seconds + "s " + question.Question + '<br><button>A:' + question.Answer1 
+    + '</button><br><button>B:' + question.Answer2 + '</button><br><button>C:' + question.Answer3 +
+     '</button><br><button>D:' + question.Answer4 + '</button>';
     }
     
     // If the count down is over, write some text 
