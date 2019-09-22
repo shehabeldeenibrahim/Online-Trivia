@@ -35,6 +35,11 @@ function getQuestionHttp(theUrl){
     question = JSON.parse(xmlHttp.responseText);
     return question
 }
+
+function HandleAnswer(num){
+    console.log(num);
+}
+
 function main()
     {
     var question = getQuestionHttp("http://localhost/trivia/getQuestion.php");
@@ -60,15 +65,17 @@ function main()
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     // Output the result in an element with id="demo"
 
-    if(distance >50000 && distance <70000){
+    if(distance >60000 && distance <70000){
         //Buffer from 70th sec to 50th sec in this case
         document.getElementById("demo").innerHTML = "buffer";
     }
     else{
     document.getElementById("demo").innerHTML = days + "d " + hours + "h " +
-    minutes + "m " + seconds + "s " + question.Question + '<br><button>A:' + question.Answer1 
-    + '</button><br><button>B:' + question.Answer2 + '</button><br><button>C:' + question.Answer3 +
-     '</button><br><button>D:' + question.Answer4 + '</button>';
+    minutes + "m " + seconds + "s " + question.Question +
+    '<br><button onclick="HandleAnswer(1)">A:' + question.Answer1 
+    + '</button><br><button onclick="HandleAnswer(2)">B:' + question.Answer2 +
+    '</button><br><button onclick="HandleAnswer(3)">C:' + question.Answer3
+    + '</button><br><button onclick="HandleAnswer(4)">D:' + question.Answer4 + '</button>';
     }
     
     // If the count down is over, write some text 
