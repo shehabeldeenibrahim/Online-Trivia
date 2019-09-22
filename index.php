@@ -37,7 +37,7 @@ function getQuestionHttp(theUrl){
 }
 function main()
     {
-    var question = getQuestionHttp("http://localhost:8080/timer_php//getQuestion.php");
+    var question = getQuestionHttp("http://localhost/trivia/getQuestion.php");
     var endTime = question.EndEpochs;
 
     var time = httpGet('http://worldtimeapi.org/api/timezone/Africa/Cairo')
@@ -59,8 +59,16 @@ function main()
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     // Output the result in an element with id="demo"
+
+    if(distance >20000 && distance <70000){
+        //Buffer from 70th sec to 20th sec in this case
+        document.getElementById("demo").innerHTML = "buffer";
+    }
+    else{
     document.getElementById("demo").innerHTML = days + "d " + hours + "h " +
     minutes + "m " + seconds + "s " + question.Question;
+    }
+    
     // If the count down is over, write some text 
     if (distance < 0) {
         document.getElementById("demo").innerHTML = "Please wait for the next question";

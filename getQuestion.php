@@ -41,7 +41,7 @@ function getQuestion($json, $timeNow,&$dateO, &$date) {
     $year = substr($date, 0, 4);
     $startEpochs = mktime((int)$element["h"], (int)$element["m"], (int)$element["s"], (int)$month, (int)$day, (int)$year);
     //$startEpochs+=43200;
-    $endEpochs = $startEpochs + 60;
+    $endEpochs = $startEpochs + 70;
     $dateO = $endEpochs;
     if($timeNow < $endEpochs && $timeNow >= $startEpochs){
       
