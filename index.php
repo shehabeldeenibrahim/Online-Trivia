@@ -37,7 +37,7 @@ function getQuestionHttp(theUrl){
 }
 
 function HandleAnswer(num){
-    console.log(num);
+    
 }
 
 function main()
