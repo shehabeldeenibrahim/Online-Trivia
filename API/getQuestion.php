@@ -17,11 +17,15 @@ $timeNowEpochs = getTimeEpochsNow();
 $dateO = 'o';
 $date = '';
 $Question_Answers = getQuestion($json, $timeNowEpochs, $dateO, $date);
-
-echo json_encode(array("Answer1" => $Question_Answers['Answer1'],
+if($Question_Answers!="GameOver"){
+  echo json_encode(array("Answer1" => $Question_Answers['Answer1'],
 "Answer2" => $Question_Answers['Answer2'],"Answer3" => $Question_Answers['Answer3'],
 "Answer4" => $Question_Answers['Answer4'],"Question" => $Question_Answers['question'],
 "EndEpochs" => $dateO, "date" => $date));
+}
+else{
+  echo '[{"GameOver": "GameOver"}]';
+}
 
 
 

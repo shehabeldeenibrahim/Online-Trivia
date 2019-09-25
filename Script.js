@@ -79,7 +79,7 @@ function SendAnswerResponse(){
 function main()
     {
     var showing =0;
-    var question = getQuestionHttp("http://localhost/trivia/API/getQuestion.php");
+    var question = getQuestionHttp("http://localhost/timer_php//API//getQuestion.php");
     var endTime = question.EndEpochs;
 
     var time = httpGet('http://worldtimeapi.org/api/timezone/Africa/Cairo')
