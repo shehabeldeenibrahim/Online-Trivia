@@ -10,7 +10,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-if (isset($_GET['Answer'])) {
+if (isset($_GET['Answer']) && isset($_GET['id'])) {
     $Answer = $_GET['Answer'];
     $id = $_GET['id'];
 

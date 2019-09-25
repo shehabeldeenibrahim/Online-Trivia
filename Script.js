@@ -21,7 +21,7 @@ function getQuestionHttp(theUrl){
     question = JSON.parse(xmlHttp.responseText);
     return question
 }
-
+var selectedAnswerNumber;
 function HandleAnswer(num){
     // pass vars one,two,three,four by reference and choose class based on the variables
 
@@ -65,10 +65,11 @@ function HandleAnswer(num){
         var element = document.getElementById("four");
         element.classList.add("Clicked");
     }
+    selectedAnswerNumber = num;
 }
 
-function SendAnswerResponse(){
-    var theUrl = 'http://localhost/trivia/API/AnswerResponse.php';
+function SendAnswerResponse(answerNumber, id){
+    var theUrl = 'http://localhost/timer_php//API//AnswerResponse.php' + '?Answer=' + answerNumber + '&id=' + id;
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
     xmlHttp.send( null );
@@ -129,7 +130,8 @@ function main()
         document.getElementById("header").innerHTML = "Please wait for the next question";
         document.getElementById("questions").innerHTML = "";
         clearInterval(x);
-        //var response = SendAnswerResponse();
+        var response = SendAnswerResponse(selectedAnswerNumber, question.id);
+        alert(response);
         showing =0;
 
         main();
