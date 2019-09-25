@@ -38,6 +38,7 @@ function getQuestionHttp(theUrl){
 
 function HandleAnswer(num){
     // pass vars one,two,three,four by reference and choose class based on the variables
+
     if(num == '1'){
         var element = document.getElementById("two");
         element.classList.remove("Clicked");
@@ -82,6 +83,7 @@ function HandleAnswer(num){
 
 function main()
     {
+    var showing =0;
     var question = getQuestionHttp("http://localhost/trivia/getQuestion.php");
     var endTime = question.EndEpochs;
 
@@ -104,38 +106,56 @@ function main()
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     // Output the result in an element with id="demo"
-    var one; var two; var three; var four;
+    
 
     if(distance >60000 && distance <70000){
         //Buffer from 70th sec to 50th sec in this case
-        document.getElementById("demo").innerHTML = "buffer";
+        one ={ val: "" }; two ={ val: "" }; three={ val: "" }; four={ val: "" };
+        document.getElementById("header").innerHTML = "buffer";
+        document.getElementById("questions").innerHTML = "";
+        showing = 0;
     }
     else{
-    document.getElementById("demo").innerHTML = days + "d " + hours + "h " +
-    minutes + "m " + seconds + "s " + question.Question +
-    '<br><button id ="one" onclick="HandleAnswer(1)">A:' + question.Answer1 
-    + '</button><br><button id ="two" onclick="HandleAnswer(2)">B:' + question.Answer2 +
-    '</button><br><button id ="three" onclick="HandleAnswer(3)">C:' + question.Answer3
-    + '</button><br><button id ="four" onclick="HandleAnswer(4)">D:' + question.Answer4 + '</button>';
-
-    
+        var header_data = days + "d " + hours + "h " +
+            minutes + "m " + seconds + "s " + question.Question;
+        document.getElementById("header").innerHTML = header_data;
+        if(showing ==0){
+            showing=1;
+            document.getElementById("questions").innerHTML= 
+            '<br><button id ="one" onclick="HandleAnswer(1)">A:' + question.Answer1 
+            + '</button><br><button id ="two" onclick="HandleAnswer(2)">B:' + question.Answer2 +
+            '</button><br><button id ="three" onclick="HandleAnswer(3)">C:' + question.Answer3
+            + '</button><br><button id ="four" onclick="HandleAnswer(4)">D:' + question.Answer4 + '</button>';
+    }
+        
     }
     
     // If the count down is over, write some text 
     if (distance < 0) {
-        document.getElementById("demo").innerHTML = "Please wait for the next question";
+        document.getElementById("header").innerHTML = "Please wait for the next question";
+        document.getElementById("questions").innerHTML = "";
         clearInterval(x);
         //  document.getElementById("demo").innerHTML = "EXPIRED";
-        main();
+        showing =0;
+        main(one,two,three,four);
     }
         
     }, 1000);
     return question;
 }
     var apiResponse;
+    
     apiResponse = main();
     </script>
+    <style>
+    .Clicked{
+        background-color:blue;
+        color:white;
+    }
+    </style>
 <html>
-    <body id="demo">
+    <body>
+        <div id="header"></div>
+        <div id="questions"></div>
     </body>
 </html>
