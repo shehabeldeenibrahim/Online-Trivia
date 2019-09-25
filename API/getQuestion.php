@@ -1,5 +1,10 @@
 <?php
-include("config.php");
+$dbHost = 'localhost';
+$dbName = 'su-trivia';
+$dbUsername = 'root';
+$dbPassword = '';
+
+$mysqli = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName); 
 
 //get all rows
 $result = mysqli_query($mysqli, "SELECT * FROM timer ORDER BY id DESC");
