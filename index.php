@@ -81,6 +81,14 @@ function HandleAnswer(num){
     }
 }
 
+function SendAnswerResponse(){
+    var theUrl = 'http://localhost/trivia/AnswerResponse.php';
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    time1 = JSON.parse(xmlHttp.responseText);
+}
+
 function main()
     {
     var showing =0;
@@ -109,8 +117,7 @@ function main()
     
 
     if(distance >60000 && distance <70000){
-        //Buffer from 70th sec to 50th sec in this case
-        one ={ val: "" }; two ={ val: "" }; three={ val: "" }; four={ val: "" };
+        //Buffer from 70th sec to 60th sec in this case
         document.getElementById("header").innerHTML = "buffer";
         document.getElementById("questions").innerHTML = "";
         showing = 0;
@@ -135,9 +142,9 @@ function main()
         document.getElementById("header").innerHTML = "Please wait for the next question";
         document.getElementById("questions").innerHTML = "";
         clearInterval(x);
-        //  document.getElementById("demo").innerHTML = "EXPIRED";
         showing =0;
-        main(one,two,three,four);
+
+        main();
     }
         
     }, 1000);
