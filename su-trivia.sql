@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2019 at 02:37 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Generation Time: Sep 25, 2019 at 11:57 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -47,9 +47,38 @@ CREATE TABLE `timer` (
 --
 
 INSERT INTO `timer` (`id`, `question`, `date`, `h`, `m`, `s`, `Answer1`, `Answer2`, `Answer3`, `Answer4`, `CorrectAnswer`) VALUES
-(1, 'name?', '2019-09-23', '1', '30', '0', 'ahmed', 'mostafa', 'Bobawy', 'Shixawy', '1'),
-(2, 'bday?', '2019-09-23', '1', '31', '10', '1 - 1 - 2019', '2 - 1 - 2019', '3 - 1 - 2019', '4 - 1 - 2019', '2'),
-(3, 'status?', '2019-09-23', '1', '32', '20', 'Single', 'Ready', 'To', 'Mingle', '3');
+(1, 'name?', '2019-09-25', '20', '41', '0', 'ahmed', 'mostafa', 'Bobawy', 'Shixawy', '1'),
+(2, 'bday?', '2019-09-25', '20', '42', '10', '1 - 1 - 2019', '2 - 1 - 2019', '3 - 1 - 2019', '4 - 1 - 2019', '2'),
+(3, 'status?', '2019-09-25', '20', '43', '20', 'Single', 'Ready', 'To', 'Mingle', '3');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `oauth_provider` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `oauth_uid` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `first_name` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `last_name` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `prize` text COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `gender` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `locale` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `picture` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `link` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `oauth_provider`, `oauth_uid`, `first_name`, `last_name`, `prize`, `email`, `gender`, `locale`, `picture`, `link`, `created`, `modified`) VALUES
+(957, 'google', '116035433708754087407', 'Shehab', 'Ebrahim', '', 'shehabtarek@aucegypt.edu', 'male', 'en', 'https://lh6.googleusercontent.com/-6dRkPtZhGJw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reP_P355COURSbeEvIE5Q3WrjY2tQ/photo.jpg', 'https://plus.google.com/116035433708754087407', '2019-09-25 23:22:40', '2019-09-25 23:46:12');
 
 --
 -- Indexes for dumped tables
@@ -60,6 +89,22 @@ INSERT INTO `timer` (`id`, `question`, `date`, `h`, `m`, `s`, `Answer1`, `Answer
 --
 ALTER TABLE `timer`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=958;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
