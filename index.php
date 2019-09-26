@@ -19,17 +19,30 @@ $s = $res['s'];
 
 <script src="Script.js"></script>
 
-<style>
-</style>
-
 <html>
 
 <head>
-<link rel="stylesheet" type="text/css" href="Styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="Style.css">
 </head>
 
-    <body>
-        <div id="header"></div>
-        <div id="questions"></div>
+    <body onload = "RenderAl()">
+        <div class="container">
+            <!-- Display login button / Google profile information -->
+            <?php if ($Flag == 0): ?>
+                <div id = 'C_alert' style ="display: none;"><p style="color:red">Please login through your AUC email account.</p><?php echo $output; ?></div>
+                <div id = "overlay" style ="display:none;" onclick="CancelAlert()" ></div>
+            <?php endif; ?>
+
+            <?php if ($Flag == 1): ?>
+                <!-- ?php echo $output; ? -->
+                <div id="header"></div>
+                <div id="questions"></div>
+            <?php endif; ?>
+
+        </div>
     </body>
 </html>

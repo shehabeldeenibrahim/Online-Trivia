@@ -3,6 +3,12 @@ colors
 #BA55D3 purple
 #1E1E1E black
 */
+
+.Clicked{
+	background-color:blue;
+	color:white;
+}
+
 html{
     min-height: 100%;
 }
