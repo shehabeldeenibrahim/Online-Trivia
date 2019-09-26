@@ -8,6 +8,15 @@ colors
 	background-color:blue;
 	color:white;
 }
+#header{
+	color: red;
+}
+
+.user_img{
+	width:75px;
+	height: 75px;
+	border-radius: 50%;
+}
 
 html{
     min-height: 100%;

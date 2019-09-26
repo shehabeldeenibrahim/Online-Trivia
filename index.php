@@ -41,7 +41,7 @@ $s = $res['s'];
             <?php if ($Flag == 1): ?>
                 <!-- ?php echo $output; ? -->
                 <div id="header"></div>
-                <div id="questions"></div>
+                <div id="answers"></div>
             <?php endif; ?>
 
         </div>

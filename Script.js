@@ -116,7 +116,7 @@ function main()
     if(distance >60000 && distance <70000){
         //Buffer from 70th sec to 60th sec in this case
         document.getElementById("header").innerHTML = "buffer";
-        document.getElementById("questions").innerHTML = "";
+        document.getElementById("answers").innerHTML = "";
         showing = 0;
     }
     else{
@@ -125,7 +125,7 @@ function main()
         document.getElementById("header").innerHTML = header_data;
         if(showing ==0){
             showing=1;
-            document.getElementById("questions").innerHTML= 
+            document.getElementById("answers").innerHTML= 
             '<br><button id ="one" onclick="HandleAnswer(1)">A:' + question.Answer1 
             + '</button><br><button id ="two" onclick="HandleAnswer(2)">B:' + question.Answer2 +
             '</button><br><button id ="three" onclick="HandleAnswer(3)">C:' + question.Answer3
@@ -137,7 +137,7 @@ function main()
     // If the count down is over, write some text 
     if (distance < 0) {
         document.getElementById("header").innerHTML = "Please wait for the next question";
-        document.getElementById("questions").innerHTML = "";
+        document.getElementById("answers").innerHTML = "";
         clearInterval(x);
         var response = SendAnswerResponse(selectedAnswerNumber, question.id);
         alert(response);
