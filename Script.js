@@ -112,6 +112,11 @@ function main()
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     // Output the result in an element with id="demo"
     
+    if(question[0].GameOver == 'GameOver'){
+        document.getElementById("header").innerHTML = 'BOBAWYYYYYYYY';
+        document.getElementById("answers").innerHTML = 'BOBAWYYYYYYYY';
+        return 0;
+    }
 
     if(distance >60000 && distance <70000){
         //Buffer from 70th sec to 60th sec in this case
@@ -119,6 +124,7 @@ function main()
         document.getElementById("answers").innerHTML = "";
         showing = 0;
     }
+ 
     else{
         var header_data = days + "d " + hours + "h " +
             minutes + "m " + seconds + "s " + question.Question;
@@ -150,6 +156,4 @@ function main()
     return question;
 }
     var apiResponse;
-    
     apiResponse = main();
- 
