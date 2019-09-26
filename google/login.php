@@ -101,7 +101,7 @@ else{
     $authUrl = $gClient->createAuthUrl();
     
     // Render google login button
-    $output = '<a href="'.filter_var($authUrl, FILTER_SANITIZE_URL).'"><img width="200" height="50"src="images/google.png" alt=""/></a>';
+    $output = '<a href="'.filter_var($authUrl, FILTER_SANITIZE_URL).'"><img width="200" height="50"src="google/images/google.png" alt=""/></a>';
     
 }
 
