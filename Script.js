@@ -78,7 +78,7 @@ function HandleAnswer(num){
 }
 
 function SendAnswerResponse(answerNumber, id){
-    var theUrl = 'http://localhost/timer_php//API//AnswerResponse.php' + '?Answer=' + answerNumber + '&id=' + id;
+    var theUrl = 'http://localhost/timer_php//api//AnswerResponse.php' + '?Answer=' + answerNumber + '&id=' + id;
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
     xmlHttp.send( null );
@@ -89,7 +89,7 @@ function SendAnswerResponse(answerNumber, id){
 function main()
     {
     var showing =0;
-    var question = getQuestionHttp("http://me.mydomain.com/timer_php//API//getQuestion.php");
+    var question = getQuestionHttp("http://me.mydomain.com/timer_php//api//getQuestion.php");
     var endTime = question.EndEpochs;
 
     var time = httpGet('http://worldtimeapi.org/api/timezone/Africa/Cairo')
