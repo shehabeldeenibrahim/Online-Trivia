@@ -13,5 +13,5 @@ $gClient->revokeToken();
 session_destroy();
 
 // Redirect to homepage
-header("Location:login.php");
+header("Location:http://me.mydomain.com/timer_php//index.php");
 ?>

@@ -87,7 +87,7 @@ if($gClient->getAccessToken()){
             $output .= '<p><b>Locale:</b> '.$userData['locale'].'</p>';
             $output .= '<p><b>Logged in with:</b> Google</p>';
             $output .= '<p><a href="'.$userData['link'].'" target="_blank">Click to visit Google+</a></p>';
-            $output .= '<p>Logout from <a href="logout.php">Google</a></p>';
+            $output .= '<p>Logout from <a href="http://me.mydomain.com/timer_php//google//logout.php">Google</a></p>';
             $output .= '</div>';
         }
         else{

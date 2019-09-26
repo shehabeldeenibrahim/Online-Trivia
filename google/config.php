@@ -10,7 +10,7 @@ define('DB_USER_TBL', 'users');
 // Google API configuration
 define('GOOGLE_CLIENT_ID', '495456339537-tv8u099a7g89e5rmjj96gu4ds51emu8p.apps.googleusercontent.com');
 define('GOOGLE_CLIENT_SECRET', '9RfWsy_U1L2VhgSowztFvk5K');
-define('GOOGLE_REDIRECT_URL', 'http://me.mydomain.com/timer_php//google//login.php');
+define('GOOGLE_REDIRECT_URL', 'http://me.mydomain.com/timer_php//index.php');
 
 // Start session 
 if(!session_id()){

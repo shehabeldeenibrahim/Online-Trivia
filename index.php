@@ -1,5 +1,5 @@
 <?php
-include('google/login.php');
+include_once('google/login.php');
 //including the database connection file
 $dbHost = 'localhost';
 $dbName = 'su-trivia';
@@ -30,6 +30,7 @@ $s = $res['s'];
 </head>
 
     <body onload = "RenderAl()">
+    <?php echo $output?>
         <div class="container">
             <!-- Display login button / Google profile information -->
             <?php if ($Flag == 0): ?>
