@@ -1,5 +1,5 @@
 <?php
-
+include('google/login.php');
 //including the database connection file
 $dbHost = 'localhost';
 $dbName = 'su-trivia';
