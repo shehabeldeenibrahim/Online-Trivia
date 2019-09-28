@@ -7,6 +7,7 @@ require_once 'User.class.php';
 $Flag =0;
 $Played = 0;
 
+
 if(isset($_GET['code'])){
     $gClient->authenticate($_GET['code']);
     $_SESSION['token'] = $gClient->getAccessToken();
@@ -104,7 +105,7 @@ else{
     $authUrl = $gClient->createAuthUrl();
     
     // Render google login button
-    $output = '<a href="'.filter_var($authUrl, FILTER_SANITIZE_URL).'"><img width="200" height="50"src="google/images/google.png" alt=""/></a>';
+    $GoogleButton = '<a href="'.filter_var($authUrl, FILTER_SANITIZE_URL).'"><img width="200" height="50"src="google/images/google.png" alt=""/></a>';
     
 }
 

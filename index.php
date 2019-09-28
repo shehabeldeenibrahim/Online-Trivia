@@ -34,7 +34,8 @@ $s = $res['s'];
         <div class="container">
             <!-- Display login button / Google profile information -->
             <?php if ($Flag == 0): ?>
-                <div id = 'C_alert' style ="display: none;"><p style="color:red">Please login through your AUC email account.</p><?php echo $output; ?></div>
+                <div id = 'C_alert' style ="display: none;"><p style="color:red">Please login through your AUC email account.</p>
+                <br><br><center><?php echo $GoogleButton; ?></center></div>
                 <div id = "overlay" style ="display:none;" onclick="CancelAlert()" ></div>
             <?php endif; ?>
 
