@@ -26,7 +26,6 @@ function httpGet(theUrl)
 function getQuestionHttp(theUrl){
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-    xmlhttp.setRequestHeader("id", "sa3bTekne3o");
     xmlHttp.send( null );
     question = JSON.parse(xmlHttp.responseText);
     return question
