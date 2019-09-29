@@ -78,7 +78,7 @@ function HandleAnswer(num){
 }
 
 function SendAnswerResponse(answerNumber, id){
-    var theUrl = 'http://localhost/timer_php//api//AnswerResponse.php' + '?Answer=' + answerNumber + '&id=' + id;
+    var theUrl = 'http://me.mydomain.com/timer_php//api//AnswerResponse.php' + '?Answer=' + answerNumber + '&id=' + id;
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
     xmlHttp.send( null );
