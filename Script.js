@@ -112,10 +112,12 @@ function main()
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     // Output the result in an element with id="demo"
     
-    if(question[0].GameOver == 'GameOver'){
+    try{if(question[0].GameOver == 'GameOver'){
         document.getElementById("header").innerHTML = 'BOBAWYYYYYYYY';
         document.getElementById("answers").innerHTML = 'BOBAWYYYYYYYY';
         return 0;
+    }} catch {
+        //
     }
 
     if(distance >60000 && distance <70000){

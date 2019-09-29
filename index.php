@@ -6,10 +6,10 @@ $dbName = 'su-trivia';
 $dbUsername = 'root';
 $dbPassword = '';
 
-$mysqli = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName); 
+$mysqli = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName);
 
 $result = mysqli_query($mysqli, "SELECT * FROM timer ORDER BY id ASC");
-while($res = mysqli_fetch_array($result)) { 
+while($res = mysqli_fetch_array($result)) {
 $date = $res['date'];
 $h = $res['h'];
 $m = $res['m'];
@@ -30,7 +30,7 @@ $s = $res['s'];
 </head>
 
     <body onload = "RenderAl()">
-    <?php echo $output?>
+    <!--?php echo $output?-->
         <div class="container">
             <!-- Display login button / Google profile information -->
             <?php if ($Flag == 0): ?>
