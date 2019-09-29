@@ -14,16 +14,31 @@ if (isset($_GET['Answer']) && isset($_GET['id'])) {
     $Answer = $_GET['Answer'];
     $id = $_GET['id'];
 
-    $result = mysqli_query($conn, "SELECT CorrectAnswer FROM timer WHERE id='$id'");
-    $data = mysqli_fetch_assoc($result);
+    //compute epochs now
+    $dateNow = new DateTime(null, new DateTimeZone('Africa/Cairo'));
+    $timeNow = $dateNow->getTimestamp() + $dateNow->getOffset();
+    $timeNow -=7200;
 
+    //compute epochs of question time
+    $result = mysqli_query($conn, "SELECT CorrectAnswer, h, m, s, date FROM timer WHERE id='$id'");
+    $element = mysqli_fetch_assoc($result);
+    $date = $element["date"];
+    $day = substr($date, 8, 2);
+    $month = substr($date, 5, 2);
+    $year = substr($date, 0, 4);
+    $startEpochs = mktime((int)$element["h"], (int)$element["m"], (int)$element["s"], (int)$month, (int)$day, (int)$year);
+    $endEpochs = $startEpochs + 70;
+    $dateO = $endEpochs;
     
-    if($Answer == $data["CorrectAnswer"])
-        echo json_encode(array("Response" => 'TRUE'));
-    else
-        echo json_encode(array("Response" => 'FALSE'));   
-
-    //echo json_encode(array("Response" => $data));
+    if($timeNow >= $endEpochs){ //if the question time is passed
+        if($Answer == $element["CorrectAnswer"])
+            echo json_encode(array("Response" => 'TRUE'));
+        else
+            echo json_encode(array("Response" => 'FALSE'));
+    } 
+    else {
+        echo json_encode(array("Response" => 'Cannot view answer now'));
+    }
 
 }
 
