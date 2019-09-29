@@ -40,9 +40,17 @@ function getJsonDataDb($result) {
 }
 //get time now
 function getTimeEpochsNow(){
-  $timeNow = file_get_contents("http://worldtimeapi.org/api/timezone/Africa/Cairo");
-  $timeNowJson = json_decode($timeNow);
-  $timeNowEpochs = $timeNowJson->unixtime;
+  try {
+    $timeNow = file_get_contents("http://worldtimeapi.org/api/timezone/Africa/Cairo");
+    $timeNowJson = json_decode($timeNow);
+    $timeNowEpochs = $timeNowJson->unixtime;
+  }catch (Exeption $e) {
+    $dateNow = new DateTime(null, new DateTimeZone('Africa/Cairo'));
+    $timeNowEpochs = $dateNow->getTimestamp() + $dateNow->getOffset();
+    $timeNowEpochs -=7200;
+
+  }
+  
   return $timeNowEpochs; 
 }
 function getQuestion($json, $timeNow,&$dateO, &$date) {
