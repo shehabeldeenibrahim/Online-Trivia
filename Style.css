@@ -8,6 +8,17 @@ colors
 	background-color:blue;
 	color:white;
 }
+
+.Right{
+	background-color:green;
+	color:black;
+}
+
+.Wrong{
+	background-color:red;
+	color:black;
+}
+
 #header{
 	color: red;
 }

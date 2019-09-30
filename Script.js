@@ -1,3 +1,5 @@
+var selectedAnswerNumber = 0;
+
 function RenderAl(){
     document.getElementById("overlay").style.display = "block";
     var winW = window.innerWidth;
@@ -30,7 +32,7 @@ function getQuestionHttp(theUrl){
     question = JSON.parse(xmlHttp.responseText);
     return question
 }
-var selectedAnswerNumber;
+
 function HandleAnswer(num){
     // pass vars one,two,three,four by reference and choose class based on the variables
 
@@ -155,7 +157,26 @@ function main()
         document.getElementById("header").innerHTML = "Please wait for the next question";
         document.getElementById("answers").innerHTML = "";
         clearInterval(x);
+        // Need to handle if selectedAnswerNumber is 0
         var response = SendAnswerResponse(selectedAnswerNumber, question.id, oauthId);
+        var x = document.getElementsByClassName("Clicked");
+
+        if(typeof x[0] != 'undefined' && response =="TRUE"){
+            var element = x[0];
+            element.classList.remove("Clicked");
+            element.classList.add("Right");
+        }
+        if(typeof x[0] != 'undefined' && response == "FALSE"){
+            var element = x[0];
+            element.classList.remove("Clicked");
+            element.classList.add("Wrong");
+        }
+
+        if(typeof x[0] == 'undefined'){
+            console.log('bob');
+            //After getting the correct answer number we should change it to class Right
+        }
+        selectedAnswerNumber = 0;
         alert(response);
         showing =0;
 
