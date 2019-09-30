@@ -142,7 +142,7 @@ function main()
             + '</button><br><button id ="four" onclick="HandleAnswer(4)">D:' + question.Answer4 + '</button>';
     
                 //if spectator grey out the answers
-            if(spectator == "1") {
+            if(spectator == question.id) {
                 document.getElementById("one").disabled = true;
                 document.getElementById("two").disabled = true;
                 document.getElementById("three").disabled = true;
@@ -158,25 +158,25 @@ function main()
         document.getElementById("answers").innerHTML = "";
         clearInterval(x);
         // Need to handle if selectedAnswerNumber is 0
-        var response = SendAnswerResponse(selectedAnswerNumber, question.id, oauthId);
-        var x = document.getElementsByClassName("Clicked");
+         var response = SendAnswerResponse(selectedAnswerNumber, question.id, oauthId);
+        // var x = document.getElementsByClassName("Clicked");
 
-        if(typeof x[0] != 'undefined' && response =="TRUE"){
-            var element = x[0];
-            element.classList.remove("Clicked");
-            element.classList.add("Right");
-        }
-        if(typeof x[0] != 'undefined' && response == "FALSE"){
-            var element = x[0];
-            element.classList.remove("Clicked");
-            element.classList.add("Wrong");
-        }
+        // if(typeof x[0] != 'undefined' && response =="TRUE"){
+        //     var element = x[0];
+        //     element.classList.remove("Clicked");
+        //     element.classList.add("Right");
+        // }
+        // if(typeof x[0] != 'undefined' && response == "FALSE"){
+        //     var element = x[0];
+        //     element.classList.remove("Clicked");
+        //     element.classList.add("Wrong");
+        // }
 
-        if(typeof x[0] == 'undefined'){
-            console.log('bob');
+        // if(typeof x[0] == 'undefined'){
+        //     console.log('bob');
             //After getting the correct answer number we should change it to class Right
-        }
-        selectedAnswerNumber = 0;
+        //}
+        //selectedAnswerNumber = 0;
         alert(response);
         showing =0;
 

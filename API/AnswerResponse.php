@@ -13,6 +13,7 @@ if ($conn->connect_error) {
 
 //GET REQUEST
 if (isset($_GET['Answer']) && isset($_GET['id'])) {
+
     $oauthId = $_GET["oauthId"];
     $Answer = $_GET['Answer'];
     $id = $_GET['id'];
@@ -34,12 +35,12 @@ if (isset($_GET['Answer']) && isset($_GET['id'])) {
     $dateO = $endEpochs;
     
     if($timeNow >= $endEpochs){ //if the question time is passed
-        if($Answer == $element["CorrectAnswer"])
+        if($Answer == $element["CorrectAnswer"]){
+            incrementCorrectAnswers($oauthId, $conn);
             echo json_encode(array("Response" => 'TRUE'));
-        else{
-            setSpectator($oauthId, $conn);
-            echo json_encode(array("Response" => 'FALSE'));
         }
+        else
+            echo json_encode(array("Response" => 'FALSE'));
     } 
     else {
         echo json_encode(array("Response" => 'Cannot view answer now'));
@@ -49,8 +50,13 @@ if (isset($_GET['Answer']) && isset($_GET['id'])) {
 
 $conn->close();
 
-function setSpectator($oauthId, $conn){
-$sql  = "UPDATE users SET lost = '1' WHERE oauth_uid='$oauthId'";
+function incrementCorrectAnswers($oauthId, $conn){
+$sql  = "SELECT correct_answers FROM users WHERE oauth_uid='$oauthId'";
+$result = mysqli_query($conn, $sql);
+$data = mysqli_fetch_assoc($result);
+$spectator = $data["correct_answers"];
+$spectator = (int)$spectator + 1;
+$sql  = "UPDATE users SET correct_answers = '$spectator' WHERE oauth_uid='$oauthId'";
 $result = mysqli_query($conn, $sql);
 }
 ?>

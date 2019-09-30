@@ -45,12 +45,12 @@ if($gClient->getAccessToken()){
         exit;
     }
     $id_temp = $gpUserData['oauth_uid'];
-    $sql  = "SELECT lost FROM users WHERE oauth_uid='$id_temp'";
+    $sql  = "SELECT correct_answers FROM users WHERE oauth_uid='$id_temp'";
    
     $result = mysqli_query($conn, $sql);
     $data = mysqli_fetch_assoc($result);
      try{
-        $result = $data["lost"];
+        $result = $data["correct_answers"];
         $data = $result;
     }
     catch(Exception $e) {

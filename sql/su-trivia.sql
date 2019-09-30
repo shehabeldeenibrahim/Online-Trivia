@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2019 at 02:09 AM
+-- Generation Time: Sep 30, 2019 at 03:22 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -47,9 +47,9 @@ CREATE TABLE `timer` (
 --
 
 INSERT INTO `timer` (`id`, `question`, `date`, `h`, `m`, `s`, `Answer1`, `Answer2`, `Answer3`, `Answer4`, `CorrectAnswer`) VALUES
-(1, 'name?', '2019-09-30', '2', '6', '0', 'ahmed', 'mostafa', 'Bobawy', 'Shixawy', '1'),
-(2, 'bday?', '2019-09-30', '2', '7', '10', '1 - 1 - 2019', '2 - 1 - 2019', '3 - 1 - 2019', '4 - 1 - 2019', '2'),
-(3, 'status?', '2019-09-30', '2', '8', '20', 'Single', 'Ready', 'To', 'Mingle', '3');
+(1, 'name?', '2019-09-30', '14', '17', '0', 'ahmed', 'mostafa', 'Bobawy', 'Shixawy', '1'),
+(2, 'bday?', '2019-09-30', '14', '18', '10', '1 - 1 - 2019', '2 - 1 - 2019', '3 - 1 - 2019', '4 - 1 - 2019', '2'),
+(3, 'status?', '2019-09-30', '14', '19', '20', 'Single', 'Ready', 'To', 'Mingle', '3');
 
 -- --------------------------------------------------------
 
@@ -63,7 +63,7 @@ CREATE TABLE `users` (
   `oauth_uid` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
   `first_name` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
   `last_name` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
-  `lost` text COLLATE utf8_unicode_ci,
+  `correct_answers` text COLLATE utf8_unicode_ci,
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `gender` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   `locale` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -77,8 +77,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `oauth_provider`, `oauth_uid`, `first_name`, `last_name`, `lost`, `email`, `gender`, `locale`, `picture`, `link`, `created`, `modified`) VALUES
-(957, 'google', '116035433708754087407', 'Shehab', 'Ebrahim', '1', 'shehabtarek@aucegypt.edu', 'male', 'en', 'https://lh6.googleusercontent.com/-6dRkPtZhGJw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reP_P355COURSbeEvIE5Q3WrjY2tQ/photo.jpg', 'https://plus.google.com/116035433708754087407', '2019-09-25 23:22:40', '2019-09-30 02:06:45');
+INSERT INTO `users` (`id`, `oauth_provider`, `oauth_uid`, `first_name`, `last_name`, `correct_answers`, `email`, `gender`, `locale`, `picture`, `link`, `created`, `modified`) VALUES
+(957, 'google', '116035433708754087407', 'Shehab', 'Ebrahim', '1', 'shehabtarek@aucegypt.edu', 'male', 'en', 'https://lh6.googleusercontent.com/-6dRkPtZhGJw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reP_P355COURSbeEvIE5Q3WrjY2tQ/photo.jpg', 'https://plus.google.com/116035433708754087407', '2019-09-25 23:22:40', '2019-09-30 14:18:33');
 
 --
 -- Indexes for dumped tables

@@ -14,10 +14,10 @@ $json = getJsonDataDb($result);
 if (isset($_GET['oauthId'])) {
 
 $oauthId = $_GET['oauthId'];
-$sql  = "SELECT lost FROM users WHERE oauth_uid='$oauthId'";
+$sql  = "SELECT correct_answers FROM users WHERE oauth_uid='$oauthId'";
 $result = mysqli_query($mysqli, $sql);
 $data = mysqli_fetch_assoc($result);
-$spectator = $data["lost"];
+$spectator = $data["correct_answers"];
 }
 
 $timeNowEpochs = getTimeEpochsNow();
