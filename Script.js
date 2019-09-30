@@ -140,9 +140,9 @@ function main()
             + '</button><br><button id ="two" onclick="HandleAnswer(2)">B:' + question.Answer2 +
             '</button><br><button id ="three" onclick="HandleAnswer(3)">C:' + question.Answer3
             + '</button><br><button id ="four" onclick="HandleAnswer(4)">D:' + question.Answer4 + '</button>';
-    
+            
                 //if spectator grey out the answers
-            if(spectator == question.id) {
+            if(spectator != question.id) {
                 document.getElementById("one").disabled = true;
                 document.getElementById("two").disabled = true;
                 document.getElementById("three").disabled = true;
