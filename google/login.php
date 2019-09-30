@@ -8,6 +8,7 @@ $Flag =0;
 $Played = 0;
 
 
+
 if(isset($_GET['code'])){
     $gClient->authenticate($_GET['code']);
     $_SESSION['token'] = $gClient->getAccessToken();
@@ -44,12 +45,12 @@ if($gClient->getAccessToken()){
         exit;
     }
     $id_temp = $gpUserData['oauth_uid'];
-    $sql  = "SELECT prize FROM users WHERE oauth_uid='$id_temp'";
+    $sql  = "SELECT lost FROM users WHERE oauth_uid='$id_temp'";
    
     $result = mysqli_query($conn, $sql);
     $data = mysqli_fetch_assoc($result);
      try{
-        $result = $data["prize"];
+        $result = $data["lost"];
         $data = $result;
     }
     catch(Exception $e) {

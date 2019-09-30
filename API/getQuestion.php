@@ -11,7 +11,14 @@ $result = mysqli_query($mysqli, "SELECT * FROM timer ORDER BY id DESC");
 
 $json = getJsonDataDb($result);
 
+if (isset($_GET['oauthId'])) {
 
+$oauthId = $_GET['oauthId'];
+$sql  = "SELECT lost FROM users WHERE oauth_uid='$oauthId'";
+$result = mysqli_query($mysqli, $sql);
+$data = mysqli_fetch_assoc($result);
+$spectator = $data["lost"];
+}
 
 $timeNowEpochs = getTimeEpochsNow();
 $dateO = 'o';
@@ -21,7 +28,7 @@ if($Question_Answers!="GameOver"){
   echo json_encode(array("id" => $Question_Answers['id'], "Answer1" => $Question_Answers['Answer1'],
 "Answer2" => $Question_Answers['Answer2'],"Answer3" => $Question_Answers['Answer3'],
 "Answer4" => $Question_Answers['Answer4'],"Question" => $Question_Answers['question'],
-"EndEpochs" => $dateO, "date" => $date));
+"EndEpochs" => $dateO, "date" => $date, "spectator" => $spectator));
 }
 else{
   echo '[{"GameOver": "GameOver"}]';

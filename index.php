@@ -15,9 +15,11 @@ $h = $res['h'];
 $m = $res['m'];
 $s = $res['s'];
 }
+$oauthId = $gpUserData['oauth_uid'];
 ?>
 
-<script src="Script.js"></script>
+<script type="text/javascript">var oauthId = "<?php echo $oauthId ?>";</script>
+<script src="Script.js"> </script>
 
 <html>
 
@@ -40,7 +42,7 @@ $s = $res['s'];
             <?php endif; ?>
 
             <?php if ($Flag == 1): ?>
-                <!-- ?php echo $output; ? -->
+                <?php echo $output; ?>
                 <div id="header"></div>
                 <div id="answers"></div>
             <?php endif; ?>

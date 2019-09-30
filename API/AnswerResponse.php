@@ -13,6 +13,7 @@ if ($conn->connect_error) {
 
 //GET REQUEST
 if (isset($_GET['Answer']) && isset($_GET['id'])) {
+    $oauthId = $_GET["oauthId"];
     $Answer = $_GET['Answer'];
     $id = $_GET['id'];
 
@@ -35,8 +36,10 @@ if (isset($_GET['Answer']) && isset($_GET['id'])) {
     if($timeNow >= $endEpochs){ //if the question time is passed
         if($Answer == $element["CorrectAnswer"])
             echo json_encode(array("Response" => 'TRUE'));
-        else
+        else{
+            setSpectator($oauthId, $conn);
             echo json_encode(array("Response" => 'FALSE'));
+        }
     } 
     else {
         echo json_encode(array("Response" => 'Cannot view answer now'));
@@ -45,4 +48,9 @@ if (isset($_GET['Answer']) && isset($_GET['id'])) {
 }
 
 $conn->close();
+
+function setSpectator($oauthId, $conn){
+$sql  = "UPDATE users SET lost = '1' WHERE oauth_uid='$oauthId'";
+$result = mysqli_query($conn, $sql);
+}
 ?>

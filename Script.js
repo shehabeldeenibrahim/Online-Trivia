@@ -78,7 +78,7 @@ function HandleAnswer(num){
 }
 
 function SendAnswerResponse(answerNumber, id){
-    var theUrl = 'http://me.mydomain.com/timer_php//api//AnswerResponse.php' + '?Answer=' + answerNumber + '&id=' + id;
+    var theUrl = 'http://me.mydomain.com/timer_php//api//AnswerResponse.php' + '?Answer=' + answerNumber + '&id=' + id + '&oauthId=' + oauthId;
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
     xmlHttp.send( null );
@@ -89,9 +89,9 @@ function SendAnswerResponse(answerNumber, id){
 function main()
     {
     var showing =0;
-    var question = getQuestionHttp("http://me.mydomain.com/timer_php//api//getQuestion.php");
+    var question = getQuestionHttp("http://me.mydomain.com/timer_php//api//getQuestion.php" + '?oauthId=' + oauthId);
     var endTime = question.EndEpochs;
-
+    var spectator = question.spectator;
     var time = httpGet('http://worldtimeapi.org/api/timezone/Africa/Cairo')
     var countDownDate = endTime * 1000;
 
@@ -138,7 +138,15 @@ function main()
             + '</button><br><button id ="two" onclick="HandleAnswer(2)">B:' + question.Answer2 +
             '</button><br><button id ="three" onclick="HandleAnswer(3)">C:' + question.Answer3
             + '</button><br><button id ="four" onclick="HandleAnswer(4)">D:' + question.Answer4 + '</button>';
-    }
+    
+                //if spectator grey out the answers
+            if(spectator == "1") {
+                document.getElementById("one").disabled = true;
+                document.getElementById("two").disabled = true;
+                document.getElementById("three").disabled = true;
+                document.getElementById("four").disabled = true;
+            }
+        }
         
     }
     
@@ -147,7 +155,7 @@ function main()
         document.getElementById("header").innerHTML = "Please wait for the next question";
         document.getElementById("answers").innerHTML = "";
         clearInterval(x);
-        var response = SendAnswerResponse(selectedAnswerNumber, question.id);
+        var response = SendAnswerResponse(selectedAnswerNumber, question.id, oauthId);
         alert(response);
         showing =0;
 
