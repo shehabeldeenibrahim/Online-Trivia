@@ -15,7 +15,8 @@ $h = $res['h'];
 $m = $res['m'];
 $s = $res['s'];
 }
-$oauthId = $gpUserData['oauth_uid'];
+if(isset($gpUserData))
+    $oauthId = $gpUserData['oauth_uid'];
 ?>
 
 <script type="text/javascript">var oauthId = "<?php echo $oauthId ?>";</script>

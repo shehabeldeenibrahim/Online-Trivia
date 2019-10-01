@@ -79,8 +79,8 @@ function HandleAnswer(num){
     selectedAnswerNumber = num;
 }
 
-function SendAnswerResponse(answerNumber, id){
-    var theUrl = 'http://me.mydomain.com/timer_php//api//AnswerResponse.php' + '?Answer=' + answerNumber + '&id=' + id + '&oauthId=' + oauthId;
+function SendAnswerResponse(answerNumber, id, oauthId, spectator){
+    var theUrl = 'http://me.mydomain.com/timer_php//api//AnswerResponse.php' + '?Answer=' + answerNumber + '&id=' + id + '&oauthId=' + oauthId +'&spectator=' + spectator;
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
     xmlHttp.send( null );
@@ -158,7 +158,7 @@ function main()
         document.getElementById("answers").innerHTML = "";
         clearInterval(x);
         // Need to handle if selectedAnswerNumber is 0
-         var response = SendAnswerResponse(selectedAnswerNumber, question.id, oauthId);
+         var response = SendAnswerResponse(selectedAnswerNumber, question.id, oauthId, spectator);
         // var x = document.getElementsByClassName("Clicked");
 
         // if(typeof x[0] != 'undefined' && response =="TRUE"){
