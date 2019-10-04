@@ -150,34 +150,33 @@ function main()
             }
         }
         
-    }
+    } 
     
     // If the count down is over, write some text 
     if (distance < 0) {
         document.getElementById("header").innerHTML = "Please wait for the next question";
-        document.getElementById("answers").innerHTML = "";
         clearInterval(x);
         // Need to handle if selectedAnswerNumber is 0
-         var response = SendAnswerResponse(selectedAnswerNumber, question.id, oauthId, spectator);
-        // var x = document.getElementsByClassName("Clicked");
+        var response = SendAnswerResponse(selectedAnswerNumber, question.id, oauthId, spectator);
+        var answerElement = document.getElementsByClassName("Clicked");
+        
+        if(typeof answerElement[0] != 'undefined' && response =="TRUE"){
+            var element = answerElement[0];
+            element.classList.remove("Clicked");
+            element.classList.add("Right");
+        }
+        if(typeof answerElement[0] != 'undefined' && response == "FALSE"){
+            var element = answerElement[0];
+            element.classList.remove("Clicked");
+            element.classList.add("Wrong");
+        }
 
-        // if(typeof x[0] != 'undefined' && response =="TRUE"){
-        //     var element = x[0];
-        //     element.classList.remove("Clicked");
-        //     element.classList.add("Right");
-        // }
-        // if(typeof x[0] != 'undefined' && response == "FALSE"){
-        //     var element = x[0];
-        //     element.classList.remove("Clicked");
-        //     element.classList.add("Wrong");
-        // }
-
-        // if(typeof x[0] == 'undefined'){
-        //     console.log('bob');
+        if(typeof answerElement[0] == 'undefined'){
+            console.log('bob');
             //After getting the correct answer number we should change it to class Right
-        //}
+        }
         //selectedAnswerNumber = 0;
-        alert(response);
+        //alert(response);
         showing =0;
 
         main();

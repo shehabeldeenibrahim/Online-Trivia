@@ -36,6 +36,8 @@ if($gClient->getAccessToken()){
     $gpUserData['locale']     = !empty($gpUserProfile['locale'])?$gpUserProfile['locale']:'';
     $gpUserData['picture']    = !empty($gpUserProfile['picture'])?$gpUserProfile['picture']:'';
     $gpUserData['link']       = !empty($gpUserProfile['link'])?$gpUserProfile['link']:'';
+    $gpUserData['correct_answers'] = !empty($gpUserProfile['correct_answers'])?$gpUserProfile['correct_answers']:'';
+
     
    $conn = mysqli_connect('localhost', 'root', '', 'su-trivia');
     if (!$conn) {
