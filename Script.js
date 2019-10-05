@@ -7,6 +7,7 @@ function RenderAl(){
     document.getElementById("C_alert").style.height = 300+"px";
     document.getElementById("C_alert").style.left = (winW/2) - (340 * .5)+"px";
     document.getElementById("C_alert").style.top = "100px"; 
+    return (winW/2) - (340 * .5);
 }
 
 function httpGet(theUrl)

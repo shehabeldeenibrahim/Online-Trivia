@@ -34,7 +34,7 @@ if(isset($gpUserData))
 
     <body onload = "RenderAl()">
     <!--?php echo $output?-->
-        <div class="container">
+        <div>
             <!-- Display login button / Google profile information -->
             <?php if ($Flag == 0): ?>
                 <div id = 'C_alert' style ="display: none;"><p style="color:red">Please login through your AUC email account.</p>
@@ -44,8 +44,12 @@ if(isset($gpUserData))
 
             <?php if ($Flag == 1): ?>
                 <?php echo $output; ?>
+                <center>
+                <div id = 'Q_box'>
                 <div id="header"></div>
                 <div id="answers"></div>
+                </div>
+                </center>
             <?php endif; ?>
 
         </div>
