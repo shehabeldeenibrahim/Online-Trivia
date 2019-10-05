@@ -96,7 +96,7 @@ function main()
     var spectator = question.spectator;
     var time = httpGet('http://worldtimeapi.org/api/timezone/Africa/Cairo')
     var countDownDate = endTime * 1000;
-
+    var prevq = question.Question;
     var now = time * 1000;
     now /= 1000
 
@@ -153,8 +153,9 @@ function main()
     } 
     
     // If the count down is over, write some text 
-    if (distance < 0) {
-        document.getElementById("header").innerHTML = "Please wait for the next question";
+    if (distance <= 0) {
+        document.getElementById("header").innerHTML = prevq;
+        //document.getElementById("header").innerHTML = question.question;
         clearInterval(x);
         // Need to handle if selectedAnswerNumber is 0
         var response = SendAnswerResponse(selectedAnswerNumber, question.id, oauthId, spectator);
@@ -179,7 +180,11 @@ function main()
         //alert(response);
         showing =0;
 
-        main();
+        setTimeout(function() {
+            //your code to be executed after 1 second
+            main();
+          }, 1000);
+        
     }
         
     }, 1000);
