@@ -28,12 +28,12 @@ if(isset($gpUserData))
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="Buttons.css">
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="Style.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap" rel="stylesheet">
 </head>
 
     <body onload = "RenderAl()">
-    <!--?php echo $output?-->
         <div>
             <!-- Display login button / Google profile information -->
             <?php if ($Flag == 0): ?>
@@ -46,8 +46,10 @@ if(isset($gpUserData))
                 <?php echo $output; ?>
                 <center>
                 <div id = 'Q_box'>
+                <center>
                 <div id="header"></div>
                 <div id="answers"></div>
+                </center>
                 </div>
                 </center>
             <?php endif; ?>
