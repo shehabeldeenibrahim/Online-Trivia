@@ -94,8 +94,8 @@ if($gClient->getAccessToken()){
             $output .= '<p>Logout from <a href="http://me.mydomain.com/timer_php//google//logout.php">Google</a></p>';
             $output .= '</div>';*/
             $output = '<img class = "user_img" src="'.$userData['picture'].'">';
-            $output .= '<p>'.$userData['first_name'].' '.$userData['last_name'].'</p>';
-            $output .= '<p style="font-size:small;" ><a href="http://me.mydomain.com/timer_php//google//logout.php">Logout</a></p><br><br>';
+            $output .= '<p class ="name">'.$userData['first_name'].' '.$userData['last_name'].'</p>';
+            $output .= '<p style="font-size:small;" ><a style = "color:#9AA9C4" href="http://me.mydomain.com/timer_php//google//logout.php">Logout</a></p><br><br>';
         }
         else{
             $output = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
