@@ -15,7 +15,7 @@ body{
     position:relative;
     font-family: 'Libre Franklin', sans-serif;
     -webkit-font-smoothing: antialiased;
-    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #869ee1, #73a1df, #61a3da, #459fcd, #2a9abe, #0f94ad, #008e9b);
+    
 }
 
 p{
