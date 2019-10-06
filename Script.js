@@ -91,6 +91,7 @@ function SendAnswerResponse(answerNumber, id, oauthId, spectator){
 
 function main()
     {
+        
     var showing =0;
     var question = getQuestionHttp("http://me.mydomain.com/timer_php//api//getQuestion.php" + '?oauthId=' + oauthId);
     var endTime = question.EndEpochs;
@@ -122,7 +123,7 @@ function main()
     }} catch {
         //
     }
-
+    
     if(distance >60000 && distance <70000){
         //Buffer from 70th sec to 60th sec in this case
         document.getElementById("header").innerHTML = "buffer";
@@ -164,12 +165,12 @@ function main()
         
         if(typeof answerElement[0] != 'undefined' && response =="TRUE"){
             var element = answerElement[0];
-            element.classList.remove("Clicked");
+            element.classList.remove("bttn-dark");
             element.classList.add("Right");
         }
         if(typeof answerElement[0] != 'undefined' && response == "FALSE"){
             var element = answerElement[0];
-            element.classList.remove("Clicked");
+            element.classList.remove("bttn-dark");
             element.classList.add("Wrong");
         }
 
