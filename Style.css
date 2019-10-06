@@ -15,7 +15,7 @@ body{
     position:relative;
     font-family: 'Libre Franklin', sans-serif;
     -webkit-font-smoothing: antialiased;
-    background-image: linear-gradient(to bottom, #ffffff, #f5f5f5, #ececec, #d1cfdb);
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #869ee1, #73a1df, #61a3da, #459fcd, #2a9abe, #0f94ad, #008e9b);
 }
 
 p{
@@ -83,9 +83,17 @@ p{
     margin: auto;
     background-color: white;
     z-index: 11;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 20px;
     overflow: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+footer{
+    font-weight: 900;
+    color: #FFFFFF;
+    font-size: large;
+    bottom:0;
+    position: absolute;
+    margin: 7px auto;
+}

@@ -45,6 +45,7 @@ if(isset($gpUserData))
             <?php if ($Flag == 1): ?>
                 <?php echo $output; ?>
                 <center>
+                <img style="margin-bottom:20px;" height="100" width="100" src="White SU Logo-02.png">
                 <div id = 'Q_box'>
                 <center>
                 <div id="header"></div>
