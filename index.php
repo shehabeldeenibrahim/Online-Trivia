@@ -30,12 +30,16 @@ if(isset($gpUserData))
     <link rel="stylesheet" href="Style.css">
     <link rel="stylesheet" href="Buttons.css">
     <link rel="stylesheet" href="disco.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap" rel="stylesheet">
 </head>
 
     <body onload = "RenderAl()">
         <div class = 'Container'>
+        <div id="progressBar">
+            <div></div>
+        </div>
             <!-- Display login button / Google profile information -->
             <?php if ($Flag == 0): ?>
                 <div id = 'C_alert' style ="display: none;"><p style="color:red">Please login through your AUC email account.</p>

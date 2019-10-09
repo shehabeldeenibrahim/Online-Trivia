@@ -1,5 +1,18 @@
 var selectedAnswerNumber = 0;
 
+function progress(timeleft, timetotal, $element) {
+    var progressBarWidth = timeleft * $element.width() / timetotal;
+    if(timeleft == 59){
+        $element.find('div').animate({ width: progressBarWidth }, 500).html(timeleft);
+    }
+    else{
+    $element.find('div').animate({ width: progressBarWidth }, 0).html(timeleft);}
+    // if(timeleft > 0) {
+    //     setTimeout(function() {
+    //         progress(timeleft - 1, timetotal, $element);
+    //     }, 1000);
+    // }
+};
 function RenderAl(){
     document.getElementById("overlay").style.display = "block";
     var winW = window.innerWidth;
@@ -105,7 +118,7 @@ function main()
     // Update the count down every 1 second
     var x = setInterval(function() {
     now = now + 1000;
-
+    
     // Find the distance between now an the count down date
     var distance = countDownDate - now;
 
@@ -132,6 +145,9 @@ function main()
     }
  
     else{
+        progress(seconds, 60, $('#progressBar'));
+
+        
         var header_data = days + "d " + hours + "h " +
             minutes + "m " + seconds + "s " + question.Question;
         document.getElementById("header").innerHTML = header_data;
