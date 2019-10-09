@@ -171,6 +171,7 @@ function main()
         //progress(seconds, 60, $('#progressBar'));
         document.getElementById("wrapper").style = 'display:block';
         progress_circle(seconds, 15);
+        document.getElementById('timer').innerHTML = seconds;
         
         var header_data = days + "d " + hours + "h " +
             minutes + "m " + seconds + "s " + question.Question;

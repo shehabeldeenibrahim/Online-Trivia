@@ -53,6 +53,7 @@ if(isset($gpUserData))
                             <svg class="progress green noselect" data-progress="33" x="0px" y="0px" viewBox="0 0 80 80">
                                 <path class="track" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
                                 <path class="fill" d="M5,40a35,35 0 1,0 70,0a35,35 0 1,0 -70,0" />
+                                <text id="timer" class="value" x="48%" y="65%">0</text>
                             </svg>
                         </div>
                 <center>
