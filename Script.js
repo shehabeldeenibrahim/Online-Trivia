@@ -149,15 +149,18 @@ function main()
         //
     }
     
-    if(distance >15000 && distance <20000){
+    if(distance >1000 && distance <20000){
         //Buffer from 70th sec to 60th sec in this case
-        document.getElementById("header").innerHTML = "buffer";
+        document.getElementById("wrapper").style = 'display:none';
+        document.getElementById("header").innerHTML = '<img class="logos" height="250" width="250" src="logos.png"><br><p style = "font-size:24px">Loading ...</p> ';
         document.getElementById("answers").innerHTML = "";
         showing = 0;
     }
  
     else{
+
         //progress(seconds, 60, $('#progressBar'));
+        document.getElementById("wrapper").style = 'display:block';
         progress_circle(seconds, 15);
         
         var header_data = days + "d " + hours + "h " +
@@ -242,7 +245,7 @@ function main()
         setTimeout(function() {
             //your code to be executed after 1 second
             main();
-          }, 1000);
+          }, 1800);
         
     }
         
