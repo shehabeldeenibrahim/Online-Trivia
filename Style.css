@@ -149,6 +149,8 @@ footer{
     width: 0;
     background-color: #CBEA00;
     box-sizing: border-box;
+    -webkit-transition: width 1s; /* Safari prior 6.1 */
+    transition: width 1s;
   }
   
   /* Do not take in account */

@@ -7,12 +7,9 @@ function progress(timeleft, timetotal, $element) {
     }
     else{
     $element.find('div').animate({ width: progressBarWidth }, 0).html(timeleft);}
-    // if(timeleft > 0) {
-    //     setTimeout(function() {
-    //         progress(timeleft - 1, timetotal, $element);
-    //     }, 1000);
-    // }
+    
 };
+
 function RenderAl(){
     document.getElementById("overlay").style.display = "block";
     var winW = window.innerWidth;
