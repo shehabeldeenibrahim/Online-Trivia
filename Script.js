@@ -149,7 +149,7 @@ function main()
         //
     }
     
-    if(distance >1000 && distance <20000){
+    if(distance >15000 && distance <20000){
         //Buffer from 70th sec to 60th sec in this case
         document.getElementById("wrapper").style = 'display:none';
         document.getElementById("header").innerHTML = '<img class="logos" height="250" width="250" src="logos.png"><br><p style = "font-size:24px">Loading ...</p> ';
