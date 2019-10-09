@@ -31,7 +31,7 @@ if (isset($_GET['Answer']) && isset($_GET['id']) && isset($_GET['spectator'])) {
     $month = substr($date, 5, 2);
     $year = substr($date, 0, 4);
     $startEpochs = mktime((int)$element["h"], (int)$element["m"], (int)$element["s"], (int)$month, (int)$day, (int)$year);
-    $endEpochs = $startEpochs + 70;
+    $endEpochs = $startEpochs + 20;
     $dateO = $endEpochs;
     
     if($spectator == $id) {
@@ -41,14 +41,14 @@ if (isset($_GET['Answer']) && isset($_GET['id']) && isset($_GET['spectator'])) {
             echo json_encode(array("Response" => 'TRUE'));
         }
         else
-            echo json_encode(array("Response" => 'FALSE'));
+            echo json_encode(array("Response" => 'FALSE'. $element["CorrectAnswer"]));
     } 
     else {
         echo json_encode(array("Response" => 'Cannot view answer now'));
     }
 }
 else {
-    echo json_encode(array("Response" => 'changed disabled to enabled'));
+    echo json_encode(array("Response" => 'changed disabled to enabled'. $element["CorrectAnswer"]));
 }
 
 }

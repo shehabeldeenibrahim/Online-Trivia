@@ -149,7 +149,7 @@ function main()
         //
     }
     
-    if(distance >60000 && distance <70000){
+    if(distance >15000 && distance <20000){
         //Buffer from 70th sec to 60th sec in this case
         document.getElementById("header").innerHTML = "buffer";
         document.getElementById("answers").innerHTML = "";
@@ -158,7 +158,7 @@ function main()
  
     else{
         //progress(seconds, 60, $('#progressBar'));
-        progress_circle(seconds, 60);
+        progress_circle(seconds, 15);
         
         var header_data = days + "d " + hours + "h " +
             minutes + "m " + seconds + "s " + question.Question;
@@ -195,27 +195,50 @@ function main()
         var response = SendAnswerResponse(selectedAnswerNumber, question.id, oauthId, spectator);
         var answerElement = document.getElementsByClassName("Clicked");
         
+        let numbersArray = ["null", "one", "two", "three", "four"];
         if(typeof answerElement[0] != 'undefined' && response =="TRUE"){
             var element = answerElement[0];
             element.classList.remove("bttn-dark");
             element.classList.remove("corebttn");
             element.classList.add("Right");
+
         }
-        if(typeof answerElement[0] != 'undefined' && response == "FALSE"){
+        if(typeof answerElement[0] != 'undefined' && response.substr(0,5) == "FALSE"){
             var element = answerElement[0];
             element.classList.remove("bttn-dark");
-            element.classList.remove("corebttn");
             element.classList.add("Wrong");
+            element.classList.remove("corebttn");
+            var idIndex = numbersArray[parseInt(response[5])];
+            document.getElementById(idIndex).classList.remove("bttn-dark");
+            document.getElementById(idIndex).classList.remove("corebttn");
+            document.getElementById(idIndex).classList.add("Right");
         }
 
-        if(typeof answerElement[0] == 'undefined'){
-            console.log('bob');
+        if(typeof answerElement[0] == 'undefined'  && response.substr(0,5) == "FALSE"){
+            try {
+                
+                var idIndex = numbersArray[parseInt(response[5])];
+                document.getElementById(idIndex).classList.remove("bttn-dark");
+                document.getElementById(idIndex).classList.remove("corebttn");
+                document.getElementById(idIndex).classList.add("Right");
+            
+            } catch (error) {
+                console.log("error")
+            }
+            
             //After getting the correct answer number we should change it to class Right
         }
-        //selectedAnswerNumber = 0;
-        //alert(response);
-        showing =0;
-
+        if(typeof answerElement[0] == 'undefined'){
+            try {
+                var idIndex = numbersArray[parseInt(response[27])];
+                document.getElementById(idIndex).classList.remove("bttn-dark");
+                document.getElementById(idIndex).classList.remove("corebttn");
+                document.getElementById(idIndex).classList.add("Right");
+            
+            } catch (error) {
+                console.log("error")
+            }
+        }
         setTimeout(function() {
             //your code to be executed after 1 second
             main();
