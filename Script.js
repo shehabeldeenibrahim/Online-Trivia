@@ -152,7 +152,7 @@ function main()
 
     try{if(won){
         document.getElementById("header").innerHTML = 'WON';
-        document.getElementById("answers").innerHTML = 'WON';
+        document.getElementById('answers').innerHTML = '<img id="spinner" height="250" width="250" src="cup.png">' ;
         return 0;
     }} catch {
         //
@@ -255,7 +255,7 @@ function main()
         if(spectator == "3" && question.id == "3") {
             if(response == "TRUE")
                 document.getElementById('header').innerHTML = "WON";
-                document.getElementById('answers').innerHTML = "" ;
+                document.getElementById('answers').innerHTML = '<img id="spinner" height="150" width="150" src="cup.png">' ;
                 won = true;
         }
 
