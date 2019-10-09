@@ -198,11 +198,13 @@ function main()
         if(typeof answerElement[0] != 'undefined' && response =="TRUE"){
             var element = answerElement[0];
             element.classList.remove("bttn-dark");
+            element.classList.remove("corebttn");
             element.classList.add("Right");
         }
         if(typeof answerElement[0] != 'undefined' && response == "FALSE"){
             var element = answerElement[0];
             element.classList.remove("bttn-dark");
+            element.classList.remove("corebttn");
             element.classList.add("Wrong");
         }
 
