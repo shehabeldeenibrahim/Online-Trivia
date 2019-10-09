@@ -166,17 +166,21 @@ function main()
         if(showing ==0){
             showing=1;
             document.getElementById("answers").innerHTML= 
-            '<br><button class="bttn-dark" id ="one" onclick="HandleAnswer(1)">A:' + question.Answer1 
-            + '</button><br><button class="bttn-dark" id ="two" onclick="HandleAnswer(2)">B:' + question.Answer2 +
-            '</button><br><button class="bttn-dark" id ="three" onclick="HandleAnswer(3)">C:' + question.Answer3
-            + '</button><br><button class="bttn-dark" id ="four" onclick="HandleAnswer(4)">D:' + question.Answer4 + '</button>';
+            '<br><button class="bttn-dark corebttn" id ="one" onclick="HandleAnswer(1)">A:' + question.Answer1 
+            + '</button><br><button class="bttn-dark corebttn" id ="two" onclick="HandleAnswer(2)">B:' + question.Answer2 +
+            '</button><br><button class="bttn-dark corebttn" id ="three" onclick="HandleAnswer(3)">C:' + question.Answer3
+            + '</button><br><button class="bttn-dark corebttn" id ="four" onclick="HandleAnswer(4)">D:' + question.Answer4 + '</button>';
             
                 //if spectator grey out the answers
             if(spectator != question.id) {
                 document.getElementById("one").disabled = true;
+                document.getElementById("one").classList.remove("bttn-dark");
                 document.getElementById("two").disabled = true;
+                document.getElementById("two").classList.remove("bttn-dark");
                 document.getElementById("three").disabled = true;
+                document.getElementById("three").classList.remove("bttn-dark");
                 document.getElementById("four").disabled = true;
+                document.getElementById("four").classList.remove("bttn-dark");
             }
         }
         

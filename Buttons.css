@@ -36,47 +36,7 @@
  a.bttn-dark:focus {
 	 color: #fff;
 }
- .bttn {
-	 font-size: 18px;
-	 letter-spacing: 2px;
-	 text-transform: uppercase;
-	 display: inline-block;
-	 text-align: center;
-	 width: 220px;
-	 font-weight: bold;
-   padding: 9px 0px;
-   margin-bottom: 7px;
-	 border: 3px solid #ff0072;
-	 border-radius: 20px;
-	 position: relative;
-	 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
-}
- .bttn:before {
-	 -webkit-transition: 0.5s all ease;
-	 transition: 0.5s all ease;
-	 position: absolute;
-	 top: 0;
-	 left: 50%;
-	 right: 50%;
-	 bottom: 0;
-	 opacity: 0;
-	 content: '';
-	 background-color: #ff0072;
-	 z-index: -2;
-}
- .bttn:hover:before {
-	 -webkit-transition: 0.5s all ease;
-	 transition: 0.5s all ease;
-	 left: 0;
-	 right: 0;
-	 opacity: 1;
-}
- .bttn:focus:before {
-	 transition: 0.5s all ease;
-	 left: 0;
-	 right: 0;
-	 opacity: 1;
-}
+ 
  .bttn-dark {
    background-color:#fff;
 	 font-size: 18px;
@@ -87,8 +47,8 @@
 	 width: 220px;
 	 font-weight: bold;
 	 padding: 10.5px 0px;
-   border: 0px solid #644cad;
-   margin-bottom: 7px;
+   	 border: 0px solid #644cad;
+   	 margin-bottom: 7px;
 	 border-radius: 20px;
 	 position: relative;
 	 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -108,6 +68,7 @@
 	 background-color: #644cad;
 	 border-radius:15px;
 	 z-index: -1;
+	 outline:none;
 }
  .bttn-dark:hover:before {
 	 -webkit-transition: 0.5s all ease;
@@ -115,13 +76,51 @@
 	 left: 0;
 	 right: 0;
 	 opacity: 1;
+	 outline:none;
 }
- .bttn-dark:focus:before {
+ .bttn-dark.Clicked:before {
 	 -webkit-transition: 0.5s all ease;
 	 transition: 0.5s all ease;
 	 left: 0;
 	 right: 0;
 	 opacity: 1;
+	 outline:none;
 }
 
+.bttn-dark.Dis{
+	background-color:#fff;
+	font-size: 18px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	display: inline-block;
+	text-align: center;
+	width: 220px;
+	font-weight: bold;
+	padding: 10.5px 0px;
+	border: 0px solid #644cad;
+	margin-bottom: 7px;
+	border-radius: 20px;
+	position: relative;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+	z-index: 2;
+	outline:none;
+}
 
+.corebttn{
+	background-color:#fff;
+	font-size: 18px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	display: inline-block;
+	text-align: center;
+	width: 220px;
+	font-weight: bold;
+	padding: 10.5px 0px;		 
+	border: 0px solid #644cad;
+	margin-bottom: 7px;
+	border-radius: 20px;
+	position: relative;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+	z-index: 2;
+	outline:none;
+}
