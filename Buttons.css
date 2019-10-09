@@ -25,7 +25,7 @@
 	 color: #fff;
 }
  a.bttn-dark {
-	 color: #644cad;
+	 color: #0e485e;
 	 text-decoration: none;
 	 -webkit-transition: 0.3s all ease;
 	 transition: 0.3s ease all;
@@ -47,7 +47,7 @@
 	 width: 220px;
 	 font-weight: bold;
 	 padding: 10.5px 0px;
-   	 border: 0px solid #644cad;
+   	 border: 0px solid #0e485e;
    	 margin-bottom: 7px;
 	 border-radius: 20px;
 	 position: relative;
@@ -65,7 +65,7 @@
 	 bottom: 0;
 	 opacity: 0;
 	 content: '';
-	 background-color: #644cad;
+	 background-color: #0e485e;
 	 border-radius:15px;
 	 z-index: -1;
 	 outline:none;
@@ -97,7 +97,7 @@
 	width: 220px;
 	font-weight: bold;
 	padding: 10.5px 0px;
-	border: 0px solid #644cad;
+	border: 0px solid #0e485e;
 	margin-bottom: 7px;
 	border-radius: 20px;
 	position: relative;
@@ -116,7 +116,7 @@
 	width: 220px;
 	font-weight: bold;
 	padding: 10.5px 0px;		 
-	border: 0px solid #644cad;
+	border: 0px solid #0e485e;
 	margin-bottom: 7px;
 	border-radius: 20px;
 	position: relative;

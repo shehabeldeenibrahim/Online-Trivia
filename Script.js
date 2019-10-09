@@ -1,4 +1,5 @@
 var selectedAnswerNumber = 0;
+var won =false;
 function progress_circle(timeleft, timetotal){
     var forEach = function (array, callback, scope) {
         for (var i = 0; i < array.length; i++) {
@@ -141,9 +142,17 @@ function main()
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     // Output the result in an element with id="demo"
     
-    try{if(question[0].GameOver == 'GameOver'){
+    try{if(question[0].GameOver == 'GameOver' && !won){
         document.getElementById("header").innerHTML = 'BOBAWYYYYYYYY';
         document.getElementById("answers").innerHTML = 'BOBAWYYYYYYYY';
+        return 0;
+    }} catch {
+        //
+    }
+
+    try{if(won){
+        document.getElementById("header").innerHTML = 'WON';
+        document.getElementById("answers").innerHTML = 'WON';
         return 0;
     }} catch {
         //
@@ -242,6 +251,14 @@ function main()
                 console.log("error")
             }
         }
+
+        if(spectator == "3" && question.id == "3") {
+            if(response == "TRUE")
+                document.getElementById('header').innerHTML = "WON";
+                document.getElementById('answers').innerHTML = "" ;
+                won = true;
+        }
+
         setTimeout(function() {
             //your code to be executed after 1 second
             main();
