@@ -1,12 +1,27 @@
 var selectedAnswerNumber = 0;
+function progress_circle(timeleft, timetotal){
+    var forEach = function (array, callback, scope) {
+        for (var i = 0; i < array.length; i++) {
+            callback.call(scope, i, array[i]);
+        }
+    };
+    
+    var max = -219.99078369140625;
+    forEach(document.querySelectorAll('.progress'), function (index, value) {
+    percent = value.getAttribute('data-progress');
+        percent = timeleft/timetotal*100;
+        value.querySelector('.fill').setAttribute('style', 'stroke-dashoffset: ' + ((100 - percent) / 100) * max);
+    });
+    
+}
 
 function progress(timeleft, timetotal, $element) {
     var progressBarWidth = timeleft * $element.width() / timetotal;
     if(timeleft == 59){
-        $element.find('div').animate({ width: progressBarWidth }, 500).html(timeleft);
+        $element.find('div').animate({ width: progressBarWidth }, 500).html();
     }
     else{
-    $element.find('div').animate({ width: progressBarWidth }, 0).html(timeleft);}
+    $element.find('div').animate({ width: progressBarWidth }, 0).html();}
     
 };
 
@@ -142,8 +157,8 @@ function main()
     }
  
     else{
-        progress(seconds, 60, $('#progressBar'));
-
+        //progress(seconds, 60, $('#progressBar'));
+        progress_circle(seconds, 60);
         
         var header_data = days + "d " + hours + "h " +
             minutes + "m " + seconds + "s " + question.Question;

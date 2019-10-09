@@ -6,9 +6,9 @@ colors
 
 *{	margin:0;	padding:0; }
 
-html{
+/* html{
     min-height: 100%;
-}
+} */
 
 body{
     min-height: 100%;
@@ -139,19 +139,31 @@ footer{
     margin: 10px auto;
     height: 22px;
     background-color: #0A5F44;
+
+    border-radius: 50px/50px;
+    border: solid 3px;
+    width: 50px;
+    height: 50px;
   }
   
   #progressBar div {
     height: 100%;
+    
     text-align: right;
-    padding: 0 10px;
+    /* padding: 0 10px; */
     line-height: 22px; /* same as #progressBar height if we want text middle aligned */
     width: 0;
-    background-color: #CBEA00;
+    /* background-color: #CBEA00; */
     box-sizing: border-box;
-    -webkit-transition: width 1s; /* Safari prior 6.1 */
-    transition: width 1s;
+    -webkit-transition: width 1.2s; /* Safari prior 6.1 */
+    transition: width 1.5s;
+    
+    border-radius: 50px/50px;
+    border: solid 3px;
+    width: 50px;
+    height: 50px;
+
+    
   }
   
-  /* Do not take in account */
-  html{padding-top:30px}a.solink{position:fixed;top:0;width:100%;text-align:center;background:#f3f5f6;color:#cfd6d9;border:1px solid #cfd6d9;line-height:30px;text-decoration:none;transition:all .3s;z-index:999}a.solink::first-letter{text-transform:capitalize}a.solink:hover{color:#428bca}
+
