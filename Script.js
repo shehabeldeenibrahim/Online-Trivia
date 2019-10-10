@@ -152,7 +152,7 @@ function main()
 
     try{if(won){
         document.getElementById("header").innerHTML = 'WON';
-        document.getElementById('answers').innerHTML = '<img id="spinner" height="250" width="250" src="cup.png">' ;
+        document.getElementById('answers').innerHTML = '<img id="spinner" height="150" width="150" src="cup.png">' ;
         return 0;
     }} catch {
         //
