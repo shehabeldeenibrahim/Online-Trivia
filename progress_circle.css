@@ -36,11 +36,12 @@
 }
 .progress .value, .progress .text {
 	font-family: 'Open Sans';
-	fill: rgb(255, 255, 255);
-	text-anchor: middle;
+	fill: rgb(56, 71, 83);
+    text-anchor: middle;
+    font-size: 39px;
 }
 .progress .text {
-	font-size: 12px;
+	font-size: 50px;
 }
 .noselect {
     -webkit-touch-callout: none;

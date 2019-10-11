@@ -1,4 +1,5 @@
 <?php
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 $dbHost = 'localhost';
 $dbName = 'su-trivia';
 $dbUsername = 'root';
@@ -68,6 +69,7 @@ function getQuestion($json, $timeNow,&$dateO, &$date) {
     $day = substr($date, 8, 2);
     $month = substr($date, 5, 2);
     $year = substr($date, 0, 4);
+    date_default_timezone_set('Africa/Cairo');
     $startEpochs = mktime((int)$element["h"], (int)$element["m"], (int)$element["s"], (int)$month, (int)$day, (int)$year);
     //$startEpochs+=43200;
     $endEpochs = $startEpochs + 20;

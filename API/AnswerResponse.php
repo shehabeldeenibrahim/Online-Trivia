@@ -1,4 +1,5 @@
 <?php 
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -30,6 +31,7 @@ if (isset($_GET['Answer']) && isset($_GET['id']) && isset($_GET['spectator'])) {
     $day = substr($date, 8, 2);
     $month = substr($date, 5, 2);
     $year = substr($date, 0, 4);
+    date_default_timezone_set('Africa/Cairo');
     $startEpochs = mktime((int)$element["h"], (int)$element["m"], (int)$element["s"], (int)$month, (int)$day, (int)$year);
     $endEpochs = $startEpochs + 20;
     $dateO = $endEpochs;

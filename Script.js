@@ -141,6 +141,7 @@ function main()
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     // Output the result in an element with id="demo"
+
     
     try{if(question[0].GameOver == 'GameOver' && !won){
         document.getElementById("header").innerHTML = 'BOBAWYYYYYYYY';
@@ -171,6 +172,7 @@ function main()
         //progress(seconds, 60, $('#progressBar'));
         document.getElementById("wrapper").style = 'display:block';
         progress_circle(seconds, 15);
+        document.getElementById('timer').innerHTML = seconds;
         
         var header_data = days + "d " + hours + "h " +
             minutes + "m " + seconds + "s " + question.Question;
