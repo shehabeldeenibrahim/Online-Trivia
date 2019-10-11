@@ -52,3 +52,11 @@
     user-select: none;
 		cursor: default;
 }
+
+.progress .value, .progress .text {
+    font-family: 'Open Sans';
+    fill: rgb(56, 71, 83);
+    text-anchor: middle;
+    font-size: 39px;
+}
+
