@@ -31,7 +31,7 @@ if(isset($gpUserData))
     <link rel="stylesheet" href="Buttons.css">
     <link rel="stylesheet" href="progress_circle.css">
     <link rel="stylesheet" href="disco.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap" rel="stylesheet">
 </head>
