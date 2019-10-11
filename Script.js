@@ -122,7 +122,7 @@ function main()
     var question = getQuestionHttp("http://me.mydomain.com/timer_php//api//getQuestion.php" + '?oauthId=' + oauthId);
     var endTime = question.EndEpochs;
     var spectator = question.spectator;
-    var time = httpGet('http://worldtimeapi.org/api/timezone/Africa/Cairo')
+    var time = httpGet('https://worldtimeapi.org/api/timezone/Africa/Cairo')
     var countDownDate = endTime * 1000;
     var prevq = question.Question;
     var now = time * 1000;

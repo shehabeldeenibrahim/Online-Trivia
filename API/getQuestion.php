@@ -49,7 +49,7 @@ function getJsonDataDb($result) {
 //get time now
 function getTimeEpochsNow(){
   try {
-    $timeNow = file_get_contents("http://worldtimeapi.org/api/timezone/Africa/Cairo");
+    $timeNow = file_get_contents("https://worldtimeapi.org/api/timezone/Africa/Cairo");
     $timeNowJson = json_decode($timeNow);
     $timeNowEpochs = $timeNowJson->unixtime;
   }catch (Exeption $e) {
